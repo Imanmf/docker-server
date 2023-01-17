@@ -3,10 +3,10 @@ services:
   server:
     container_name: server
     build:
-      context: server .
       dockerfile: Dockerfile
     ports:
-      - 3333:3000
-      - 5002:3000
+      - 3333:8080
+      - 2525:8080
+      - 8080:8080
     environment:
-      - PORT=3000
+      - PORT=8080
