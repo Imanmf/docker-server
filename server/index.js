@@ -7,27 +7,14 @@ app.use(express.json());
 
 app.get('/hello', (req, res) => {
     const query = req.query;
-    const response = {
-        data: 'Hello Stranger',
-        time: new Date().getTime(),
-        status: 200,
-        request: 'get'
-    };
     if (query.hasOwnProperty('name')) {
-        response.data = `Hello ${query.name}`
-        res.status(200).json(response);
+        res.status(200).send(`Hello ${query.name}`);
     }
-    res.status(200).json(response);
+    res.status(200).send('Hello Stranger');
 });
 
-app.get('/auther', (req, res) => {
-    const response = {
-        data: "Iman Mosayebi",
-        time: new Date().getTime(),
-        status: 200,
-        request: 'get'
-    };
-    res.status(200).json(response);
+app.get('/author', (req, res) => {
+    res.status(200).json("Iman Mosayebi");
 });
 
 const port = process.env.PORT;
