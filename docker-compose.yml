@@ -1,0 +1,12 @@
+version: "3"
+services:
+  server:
+    container_name: server
+    build:
+      context: server .
+      dockerfile: Dockerfile
+    ports:
+      - 3333:3000
+      - 5002:3000
+    environment:
+      - PORT=3000
